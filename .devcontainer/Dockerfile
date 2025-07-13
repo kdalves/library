@@ -4,6 +4,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # Instala dependências do sistema
 RUN apt-get update -qq && apt-get install -y \
+  sudo \
   curl gnupg2 build-essential libpq-dev \
   git vim libssl-dev libreadline-dev zlib1g-dev \
   nodejs yarn redis-server postgresql postgresql-contrib
