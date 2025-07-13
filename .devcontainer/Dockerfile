@@ -22,4 +22,21 @@ RUN echo 'source /etc/profile.d/rvm.sh' >> ~/.bashrc && \
     rvm use ruby-3.2.2 --default && \
     gem install bundler
 
-WORKDIR /workspace
+# Cria usuário vscode com permissões de sudo (sem senha)
+RUN useradd -m -s /bin/bash vscode && \
+    echo 'vscode ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+
+# Copia RVM do root para o usuário vscode e ajusta permissões
+RUN cp -r /usr/local/rvm /home/vscode/.rvm && \
+    chown -R vscode:vscode /home/vscode/.rvm
+
+# Define variáveis de ambiente para o RVM do usuário vscode
+ENV RVM_PATH=/home/vscode/.rvm
+ENV PATH=$RVM_PATH/bin:$RVM_PATH/rubies/ruby-3.2.2/bin:$PATH
+
+# Define o usuário padrão como vscode
+USER vscode
+
+# Define o diretório de trabalho no container
+WORKDIR /workspaces/library
+
