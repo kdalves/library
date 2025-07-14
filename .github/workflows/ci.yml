@@ -110,6 +110,7 @@ jobs:
           RAILS_ENV: test
           DATABASE_URL: postgres://postgres:postgres@localhost:5432
           CI: true
+          WEBDRIVERS_SKIP_DOWNLOAD: true
         run: |
           bin/rails test
           bin/rails test:system
