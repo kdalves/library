@@ -2,13 +2,21 @@ require "test_helper"
 require "capybara/rails"
 require "capybara/minitest"
 
-class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
-  Webdrivers::Chromedriver.required_version = "114.0.5735.90"
+if ENV["CI"]
+  require "webdrivers"
+  Webdrivers::Chromedriver.required_version = '114.0.5735.90'
 
-  driven_by :selenium, using: :headless_chrome do |options|
+  class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
+    driven_by :selenium, using: :headless_chrome do |options|
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--disable-gpu")
     options.add_argument("--window-size=1400,1400")
   end
+else
+  class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
+    # Skip system tests locally
+    driven_by :rack_test
+  end
 end
+
