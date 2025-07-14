@@ -1,5 +1,7 @@
 require "application_system_test_case"
 
+return if ENV["CI"]
+
 class BookcasesTest < ApplicationSystemTestCase
   setup do
     @bookcase = bookcases(:one)

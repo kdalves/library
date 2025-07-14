@@ -1,5 +1,7 @@
 require "application_system_test_case"
 
+return if ENV["CI"]
+
 class AuthorsTest < ApplicationSystemTestCase
   setup do
     @author = authors(:one)

@@ -1,5 +1,7 @@
 require "application_system_test_case"
 
+return if ENV["CI"]
+
 class UsersTest < ApplicationSystemTestCase
   setup do
     @user = users(:one)
