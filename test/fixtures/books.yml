@@ -1,11 +1,14 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  summary: MyString
-  virtual: false
+  title: "Dom Casmurro"
+  author_id: <%= ActiveRecord::FixtureSet.identify(:one) %>
+  category_id: <%= ActiveRecord::FixtureSet.identify(:one) %>
+  publisher_id: <%= ActiveRecord::FixtureSet.identify(:one) %>
+
 
 two:
-  title: MyString
-  summary: MyString
-  virtual: false
+  title: "O Alienista"
+  author_id: <%= ActiveRecord::FixtureSet.identify(:two) %>
+  category_id: <%= ActiveRecord::FixtureSet.identify(:two) %>
+  publisher_id: <%= ActiveRecord::FixtureSet.identify(:two) %>

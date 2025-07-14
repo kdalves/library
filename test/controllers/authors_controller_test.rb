@@ -39,8 +39,11 @@ class AuthorsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy author" do
+    author = authors(:one)
+    author.books.destroy_all
+
     assert_difference("Author.count", -1) do
-      delete author_url(@author)
+      delete author_url(author)
     end
 
     assert_redirected_to authors_url

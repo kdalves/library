@@ -39,6 +39,8 @@ class PublishersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy publisher" do
+    Book.where(publisher_id: @publisher.id).destroy_all
+
     assert_difference("Publisher.count", -1) do
       delete publisher_url(@publisher)
     end
