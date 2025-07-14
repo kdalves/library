@@ -32,9 +32,14 @@ class CategoriesTest < ApplicationSystemTestCase
     click_on "Back"
   end
 
-  test "should destroy Category" do
-    visit category_url(@category)
-    click_on "Destroy this category", match: :first
+  test "should destroy category" do
+    Book.where(category_id: @category.id).destroy_all
+
+    visit categories_url
+
+    page.accept_confirm do
+      click_on "Destroy", match: :first
+    end
 
     assert_text "Category was successfully destroyed"
   end
