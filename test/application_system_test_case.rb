@@ -4,7 +4,7 @@ require "capybara/minitest"
 
 if ENV["CI"]
   require "webdrivers"
-  Webdrivers::Chromedriver.required_version = "114.0.5735.90"
+  # Webdrivers::Chromedriver.required_version = '138.0.7204.0'
 
   class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
     driven_by :selenium, using: :headless_chrome do |options|
