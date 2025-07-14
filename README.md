@@ -1,7 +1,7 @@
 Aluno: Kathleen Alves
 Email: kathleenddeveloper@gmail.com
 
-# My Personal Library
+# Library
 
 Este é um projeto desenvolvido como parte do curso de Ruby on Rails. O objetivo é aplicar os conceitos aprendidos em aula para criar uma aplicação web funcional, bem estruturada e com boas práticas de desenvolvimento.
 
@@ -17,8 +17,8 @@ Este é um projeto desenvolvido como parte do curso de Ruby on Rails. O objetivo
 
 ```bash
 # Clone o repositório
-git clone https://github.com/kdalves/my-personal-library.git
-cd my-personal-library
+git clone https://github.com/kdalves/library.git
+cd library
 
 # abra o VSCode
 # Inicie o projeto dentro do dev container
@@ -28,8 +28,7 @@ cd my-personal-library
 
 Descreva aqui as principais funcionalidades da sua aplicação. Por exemplo:
 
-- Cadastro e login de usuários com autenticação
-- CRUD de posts/artigos
+- CRUD de livros, categorias, usuários, ...s
 - Background job para envio de e-mails
 - Sistema de permissões com roles diferentes
 
@@ -49,6 +48,6 @@ Usado para processamento assíncrono de tarefas demoradas, como envio de e-mails
 
 Aplicados para organizar melhor o código em casos onde os formulários possuem lógica de validação ou exibição mais complexa. Escolhi usar o PATTERN para possibilitar desacoplar tal classe e assim ter o benefício disso disso e disso.
 
-> _Em resumo, inclua pelo menos 5 conceitos que utilizou, a justificativa de cada um e como isso te ajudou no projeto._
-----------------------------------------
+### 4. **Engine**
+Aplicado a engine de blog para o projeto.
 
