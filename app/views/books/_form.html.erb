@@ -23,8 +23,24 @@
 
   <div>
     <%= form.label :virtual, style: "display: block" %>
-    <%= form.checkbox :virtual %>
+    <%= form.check_box :virtual %>
   </div>
+
+  <div>
+    <%= form.label :category_id, "Category", style: "display: block" %>
+    <%= form.collection_select :category_id, Category.all, :id, :name, prompt: true %>
+  </div>
+
+  <div>
+    <%= form.label :author_id, "Author", style: "display: block" %>
+    <%= form.collection_select :author_id, Author.all, :id, :name, prompt: true %>
+  </div>
+
+  <div>
+    <%= form.label :publisher_id, "Publisher", style: "display: block" %>
+    <%= form.collection_select :publisher_id, Publisher.all, :id, :name, prompt: true %>
+  </div>
+  <!-- end campos de associação -->
 
   <div>
     <%= form.submit %>
