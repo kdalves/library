@@ -3,9 +3,6 @@ require "capybara/rails"
 require "capybara/minitest"
 
 if ENV["CI"]
-  require "webdrivers"
-  # Webdrivers::Chromedriver.required_version = '138.0.7204.0'
-
   class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
     driven_by :selenium, using: :headless_chrome do |options|
       options.add_argument("--no-sandbox")
@@ -13,9 +10,11 @@ if ENV["CI"]
       options.add_argument("--disable-gpu")
       options.add_argument("--window-size=1400,1400")
     end
-  end
 else
+  require "webdrivers" # Só localmente
+  Webdrivers::Chromedriver.required_version = "138.0.7204.94" rescue nil
+
   class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
-    driven_by :rack_test
+    driven_by :selenium, using: :headless_chrome
   end
 end
