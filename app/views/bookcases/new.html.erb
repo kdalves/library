@@ -1,0 +1,11 @@
+<% content_for :title, "New bookcase" %>
+
+<h1>New bookcase</h1>
+
+<%= render "form", bookcase: @bookcase %>
+
+<br>
+
+<div>
+  <%= link_to "Back to bookcases", bookcases_path %>
+</div>
