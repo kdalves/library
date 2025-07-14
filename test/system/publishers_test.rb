@@ -33,8 +33,14 @@ class PublishersTest < ApplicationSystemTestCase
   end
 
   test "should destroy Publisher" do
-    visit publisher_url(@publisher)
-    click_on "Destroy this publisher", match: :first
+    publisher = publishers(:one)
+    Book.where(publisher_id: publisher.id).destroy_all
+
+    visit publishers_url
+
+    page.accept_confirm do
+      click_on "Destroy", match: :first
+    end
 
     assert_text "Publisher was successfully destroyed"
   end

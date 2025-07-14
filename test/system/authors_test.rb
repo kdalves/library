@@ -33,8 +33,14 @@ class AuthorsTest < ApplicationSystemTestCase
   end
 
   test "should destroy Author" do
-    visit author_url(@author)
-    click_on "Destroy this author", match: :first
+    author = authors(:one)
+    Book.where(author_id: author.id).destroy_all
+
+    visit authors_url
+
+    page.accept_confirm do
+      click_on "Destroy", match: :first
+    end
 
     assert_text "Author was successfully destroyed"
   end

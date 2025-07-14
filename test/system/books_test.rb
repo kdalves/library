@@ -11,16 +11,19 @@ class BooksTest < ApplicationSystemTestCase
   end
 
   test "should create book" do
-    visit books_url
-    click_on "New book"
+    visit new_book_url
 
-    fill_in "Summary", with: @book.summary
-    fill_in "Title", with: @book.title
-    check "Virtual" if @book.virtual
+    fill_in "Title", with: "Dom Casmurro"
+    fill_in "Summary", with: "Um clássico da literatura brasileira"
+    check "Virtual"
+
+    select "Romance", from: "Category"
+    select "Machado de Assis", from: "Author"
+    select "Companhia das Letras", from: "Publisher"
+
     click_on "Create Book"
 
     assert_text "Book was successfully created"
-    click_on "Back"
   end
 
   test "should update Book" do
