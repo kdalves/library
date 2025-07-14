@@ -35,6 +35,16 @@ RUN cp -r /usr/local/rvm /home/vscode/.rvm && \
 ENV RVM_PATH=/home/vscode/.rvm
 ENV PATH=$RVM_PATH/bin:$RVM_PATH/rubies/ruby-3.2.2/bin:$PATH
 
+# Gera locale pt_BR.UTF-8 corretamente
+RUN apt-get update && apt-get install -y locales && \
+    locale-gen pt_BR.UTF-8 && \
+    update-locale LANG=pt_BR.UTF-8 LANGUAGE=pt_BR LC_ALL=pt_BR.UTF-8
+
+# Define locale como padrão global no container
+ENV LANG=pt_BR.UTF-8
+ENV LANGUAGE=pt_BR
+ENV LC_ALL=pt_BR.UTF-8
+
 # Define o usuário padrão como vscode
 USER vscode
 
