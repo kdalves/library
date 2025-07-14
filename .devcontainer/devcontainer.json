@@ -1,15 +1,15 @@
 {
   "name": "Rails Dev Container",
-  "build": {
-    "dockerfile": "Dockerfile"
-  },
-  "forwardPorts": [3000, 5432, 6379],
-  "postCreateCommand": "bundle install || true",
+  "dockerComposeFile": ["../docker-compose.yml"],
+  "service": "app",
+  "workspaceFolder": "/workspace",
+  "forwardPorts": [3000, 5432],
   "settings": {
     "terminal.integrated.defaultProfile.linux": "bash"
   },
   "extensions": [
     "rebornix.Ruby",
     "ms-azuretools.vscode-docker"
-  ]
+  ],
+  "postCreateCommand": "bundle install"
 }
