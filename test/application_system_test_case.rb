@@ -10,11 +10,12 @@ if ENV["CI"]
       options.add_argument("--disable-gpu")
       options.add_argument("--window-size=1400,1400")
     end
+  end
 else
-  require "webdrivers" # Só localmente
+  require "webdrivers"
   Webdrivers::Chromedriver.required_version = "138.0.7204.94" rescue nil
 
   class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
-    driven_by :selenium, using: :headless_chrome
+    driven_by :selenium_chrome_headless
   end
 end
