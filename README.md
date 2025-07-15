@@ -35,6 +35,11 @@ Descreva aqui as principais funcionalidades da sua aplicação. Por exemplo:
 ## 🧠 Conceitos aplicados
 
 Abaixo estão os conceitos aprendidos em aula e aplicados neste projeto, junto com a justificativa de sua utilização:
+### 1. **Active Record**
+Para definir validações e opções validar objetos e construir error mensages.
+- validates (models em geral)
+- callbacks
+  after_create(model user)
 
 ### 1. **Service Objects**
 
