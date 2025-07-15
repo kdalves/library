@@ -1,12 +1,15 @@
-<% content_for :title, "Editing publisher" %>
+<% content_for :title, "Editing Publisher" %>
 
-<h1>Editing publisher</h1>
+<h1 class="text-3xl font-bold text-indigo-600 mb-6">Editing Publisher</h1>
 
-<%= render "form", publisher: @publisher %>
+<div class="bg-white p-6 rounded-xl shadow-md mb-6">
+  <%= render "form", publisher: @publisher %>
+</div>
 
-<br>
+<div class="space-x-4">
+  <%= link_to "🏢 Show this publisher", @publisher,
+      class: "inline-block bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300 transition text-sm" %>
 
-<div>
-  <%= link_to "Show this publisher", @publisher %> |
-  <%= link_to "Back to publishers", publishers_path %>
+  <%= link_to "← Back to publishers", publishers_path,
+      class: "inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition text-sm" %>
 </div>

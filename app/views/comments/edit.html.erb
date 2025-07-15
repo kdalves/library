@@ -1,12 +1,15 @@
-<% content_for :title, "Editing comment" %>
+<% content_for :title, "Editing Comment" %>
 
-<h1>Editing comment</h1>
+<h1 class="text-3xl font-bold text-indigo-600 mb-6">Editing Comment</h1>
 
-<%= render "form", comment: @comment %>
+<div class="bg-white p-6 rounded-xl shadow-md mb-6">
+  <%= render "form", comment: @comment %>
+</div>
 
-<br>
+<div class="space-x-4">
+  <%= link_to "💬 Show this comment", @comment,
+      class: "inline-block bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300 transition text-sm" %>
 
-<div>
-  <%= link_to "Show this comment", @comment %> |
-  <%= link_to "Back to comments", comments_path %>
+  <%= link_to "← Back to comments", comments_path,
+      class: "inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition text-sm" %>
 </div>

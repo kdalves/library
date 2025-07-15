@@ -1,17 +1,15 @@
-<div id="<%= dom_id book %>">
-  <p>
-    <strong>Title:</strong>
-    <%= book.title %>
+<div id="<%= dom_id book %>" class="bg-white p-6 rounded-xl shadow hover:shadow-md transition">
+  <p class="mb-2">
+    <span class="font-semibold text-gray-700">📘 Title:</span>
+    <span class="text-gray-900"><%= book.title %></span>
+  </p>
+
+  <p class="mb-2">
+    <span class="font-semibold text-gray-700">📝 Summary:</span>
+    <span class="text-gray-900"><%= book.summary %></span>
   </p>
 
   <p>
-    <strong>Summary:</strong>
-    <%= book.summary %>
+    <span class="font-semibold text-gray-700">🌐 Virtual:</span>
+    <span class="text-gray-900"><%= book.virtual ? "Yes" : "No" %></span>
   </p>
-
-  <p>
-    <strong>Virtual:</strong>
-    <%= book.virtual %>
-  </p>
-
-</div>

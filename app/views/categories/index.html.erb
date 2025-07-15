@@ -1,16 +1,24 @@
-<p style="color: green"><%= notice %></p>
-
 <% content_for :title, "Categories" %>
 
-<h1>Categories</h1>
+<% if notice.present? %>
+  <div class="mb-6 px-4 py-3 rounded-lg bg-green-100 text-green-800 border border-green-300">
+    <%= notice %>
+  </div>
+<% end %>
 
-<div id="categories">
+<h1 class="text-3xl font-bold text-indigo-600 mb-6">Categories</h1>
+
+<div id="categories" class="grid gap-6 mb-8">
   <% @categories.each do |category| %>
-    <%= render category %>
-    <p>
-      <%= link_to "Show this category", category %>
-    </p>
+    <div class="bg-white p-6 rounded-xl shadow hover:shadow-md transition">
+      <%= render category %>
+      <div class="mt-3">
+        <%= link_to "🏷️ Show this category", category,
+            class: "text-indigo-600 hover:underline text-sm font-medium" %>
+      </div>
+    </div>
   <% end %>
 </div>
 
-<%= link_to "New category", new_category_path %>
+<%= link_to "➕ New category", new_category_path,
+    class: "inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition text-sm" %>

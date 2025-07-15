@@ -1,12 +1,11 @@
-<div id="<%= dom_id wishlist %>">
-  <p>
-    <strong>Name:</strong>
-    <%= wishlist.name %>
+<div id="<%= dom_id wishlist %>" class="bg-white p-6 rounded-xl shadow hover:shadow-md transition">
+  <p class="mb-2">
+    <span class="font-semibold text-gray-700">📌 Name:</span>
+    <span class="text-gray-900"><%= wishlist.name %></span>
   </p>
 
   <p>
-    <strong>Status:</strong>
-    <%= wishlist.status %>
+    <span class="font-semibold text-gray-700">📊 Status:</span>
+    <span class="text-gray-900"><%= wishlist.status %></span>
   </p>
-
 </div>

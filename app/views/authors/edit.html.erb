@@ -1,12 +1,15 @@
-<% content_for :title, "Editing author" %>
+<% content_for :title, "Editing Author" %>
 
-<h1>Editing author</h1>
+<h1 class="text-3xl font-bold text-indigo-600 mb-6">Editing Author</h1>
 
-<%= render "form", author: @author %>
+<div class="bg-white p-6 rounded-xl shadow-md mb-6">
+  <%= render "form", author: @author %>
+</div>
 
-<br>
+<div class="space-x-4">
+  <%= link_to "👁️ Show this author", author_path(author),
+      class: "inline-block bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300 transition text-sm" %>
 
-<div>
-  <%= link_to "Show this author", @author %> |
-  <%= link_to "Back to authors", authors_path %>
+  <%= link_to "← Back to authors", authors_path,
+      class: "inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition text-sm" %>
 </div>

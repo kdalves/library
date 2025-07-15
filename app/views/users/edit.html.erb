@@ -1,12 +1,15 @@
-<% content_for :title, "Editing user" %>
+<% content_for :title, "Editing User" %>
 
-<h1>Editing user</h1>
+<h1 class="text-3xl font-bold text-indigo-600 mb-6">Editing User</h1>
 
-<%= render "form", user: @user %>
+<div class="bg-white p-6 rounded-xl shadow-md mb-6">
+  <%= render "form", user: @user %>
+</div>
 
-<br>
+<div class="space-x-4">
+  <%= link_to "🙍 Show this user", @user,
+      class: "inline-block bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300 transition text-sm" %>
 
-<div>
-  <%= link_to "Show this user", @user %> |
-  <%= link_to "Back to users", users_path %>
+  <%= link_to "← Back to users", users_path,
+      class: "inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition text-sm" %>
 </div>

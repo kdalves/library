@@ -1,10 +1,15 @@
-<p style="color: green"><%= notice %></p>
+<% content_for :title, "Author Details" %>
 
-<%= render @author %>
+<% if notice.present? %>
+  <div class="mb-6 px-4 py-3 rounded-lg bg-green-100 text-green-800 border border-green-300">
+    <%= notice %>
+  </div>
+<% end %>
 
-<div>
-  <%= link_to "Edit this author", edit_author_path(@author) %> |
-  <%= link_to "Back to authors", authors_path %>
-
-  <%= button_to "Destroy this author", @author, method: :delete %>
+<div class="bg-white p-6 rounded-xl shadow-md mb-6">
+  <%= render @author %>
 </div>
+
+<div class="space-x-4">
+  <%= link_to "✏️ Edit this author", edit_author_path(@author),
+      cla

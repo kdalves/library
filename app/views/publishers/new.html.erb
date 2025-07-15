@@ -1,11 +1,10 @@
-<% content_for :title, "New publisher" %>
+<% content_for :title, "New Publisher" %>
 
-<h1>New publisher</h1>
+<h1 class="text-3xl font-bold text-indigo-600 mb-6">New Publisher</h1>
 
-<%= render "form", publisher: @publisher %>
-
-<br>
-
-<div>
-  <%= link_to "Back to publishers", publishers_path %>
+<div class="bg-white p-6 rounded-xl shadow-md mb-6">
+  <%= render "form", publisher: @publisher %>
 </div>
+
+<%= link_to "← Back to publishers", publishers_path,
+    class: "inline-block bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300 transition text-sm" %>

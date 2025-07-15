@@ -1,11 +1,11 @@
 <% content_for :title, "New author" %>
 
-<h1>New author</h1>
+<h1 class="text-3xl font-bold text-indigo-600 mb-6">New Author</h1>
 
-<%= render "form", author: @author %>
-
-<br>
+<div class="bg-white p-6 rounded-xl shadow-md mb-6">
+  <%= render "form", author: @author %>
+</div>
 
 <div>
-  <%= link_to "Back to authors", authors_path %>
+  <%= link_to "← Back to authors", authors_path, class: "text-indigo-600 hover:underline text-sm" %>
 </div>

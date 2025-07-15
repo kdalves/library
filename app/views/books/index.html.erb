@@ -1,16 +1,24 @@
-<p style="color: green"><%= notice %></p>
-
 <% content_for :title, "Books" %>
 
-<h1>Books</h1>
+<% if notice.present? %>
+  <div class="mb-6 px-4 py-3 rounded-lg bg-green-100 text-green-800 border border-green-300">
+    <%= notice %>
+  </div>
+<% end %>
 
-<div id="books">
+<h1 class="text-3xl font-bold text-indigo-600 mb-6">Books</h1>
+
+<div id="books" class="grid gap-6 mb-8">
   <% @books.each do |book| %>
-    <%= render book %>
-    <p>
-      <%= link_to "Show this book", book %>
-    </p>
+    <div class="bg-white p-6 rounded-xl shadow hover:shadow-md transition">
+      <%= render book %>
+      <div class="mt-3">
+        <%= link_to "📖 Show this book", book,
+            class: "text-indigo-600 hover:underline text-sm font-medium" %>
+      </div>
+    </div>
   <% end %>
 </div>
 
-<%= link_to "New book", new_book_path %>
+<%= link_to "➕ New book", new_book_path,
+    class: "inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition text-sm" %>
